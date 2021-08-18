@@ -1,0 +1,105 @@
+.putButton {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 30px;
+  display: table-cell;
+  vertical-align: middle 
+}
+
+.deleteButton {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: gray;
+  border-radius: 30px;
+  display: table-cell;
+  vertical-align: middle 
+}
+
+img.putButtonIcon {
+  width: 60px;
+  htight: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+img.deleteButtonIcon {
+  width: 30px;
+  htight: 30px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.blockSelector {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  width: 150px;
+  height: 50px;
+  background-color:white;
+  background-image:url(../images/colorSelector.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+  text-indent: 50px;
+}
+
+.colorPicker {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  width: 150px;
+  height: 50px;
+}
+
+.gameStartButton {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.gameStartButtonIcon {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+body.ar-session .displayArMode {
+  display: inline;
+}
+body.normal-session .displayArMode {
+  display: none;
+}
+body.vr-session .displayArMode {
+  display: none;
+}
+
+body.ar-session .displayNormalMode {
+  display: none;
+}
+body.normal-session .displayNormalMode {
+  display: inline;
+}
+body.vr-session .displayNormalMode {
+  display: none;
+}

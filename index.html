@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+  </head>
+  <body class="normal-session">
+   
+    <a-scene  webxr="optionalFeatures:hit-test, dom-overlay; overlayElement:#overlay;"
+              vr-mode-ui="enterVRButton: #myEnterVRButton; enterARButton: #ArGameStartIcon">
+
+      <!-- assets -->
+      <a-assets>
+        <!-- https://kenchiku-pers.com/download/ -->
+        <img id="water.png" src="./images/water.png">
+        <img id="grass.png" src="./images/grass.png">
+        <img id="leaves.png" src="./images/leaves.png">
+        <img id="qrcode.png" src="./images/qrcode.png">
+        <img id="sand.png" src="./images/sand.png">
+        <img id="stone2.png" src="./images/stone2.png">
+        <img id="stone3.png" src="./images/stone3.png">
+        <img id="stone.png" src="./images/stone.png">
+        <img id="tatami2.png" src="./images/tatami2.png">
+        <img id="tatami.png" src="./images/tatami.png">
+        <img id="wood-panel.png" src="./images/wood-panel.png">
+        <img id="wood-log.png" src="./images/wood-log.png">
+      </a-assets>
+      
+      <!-- camera & raycaster -->
+      <a-entity id="camera" camera look-controls position="0 0.2 0" show-in-ar-mode>
+        <a-cursor position="0 0 -0.1" scale="0.1 0.1 0.1" fuse="false" raycaster="objects: .block;"></a-cursor>
+      </a-entity>
+      
+      <!-- hit-test -->
+      <a-entity id="marker-container" ar-hit-test position="0 999 0" scale="0.1 0.1 0.1" show-in-ar-mode>
+        <a-box id="marker" class="non-collidable" color="white" position="0 0 0" wireframe="true" opacity="0.5"></a-box>
+      </a-entity>
+    </a-scene>
+    
+    <!-- DOM overlay -->
+    <div id="overlay" >
+      
+      <!-- ブロックを置くボタン -->
+      <div id="putButton" class="putButton displayArMode">
+        <!-- https://nureyon.com/cube-2?pattern=13 -->
+        <img class="putButtonIcon" src="images/cube-2.png">
+      </div>
+
+      <!-- ブロック削除ボタン -->
+      <div id="deleteButton" class="deleteButton displayArMode">
+        <!-- https://icon-pit.com/pictogram/9392 -->
+        <img class="deleteButtonIcon" src="images/9392.png">
+      </div>
+
+      <!-- ブロックの選択ダイアログ -->
+      <select id="blockSelector" class="blockSelector displayArMode" name="blockselector">
+        <option id="blockWater" value="water.png">水</option>
+        <option id="blockTatami" value="tatami.png">畳</option>
+        <option id="blockSand" value="sand.png">砂</option>
+        <option id="blockGravel" value="stone.png">砂利</option>
+        <option id="blockStonewall" value="stone2.png">石垣</option>
+        <option id="blockCobble" value="stone3.png">石畳</option>
+        <option id="blockGrass" value="grass.png">草</option>
+        <option id="blockLeaf" value="leaves.png">葉</option>
+        <option id="blockWoodlog" value="wood-log.png">木</option>
+        <option id="blockWoodPanel" value="wood-panel.png">木板</option>
+        <option id="blockColor" value="colorSelector.png" selected>色ブロック</option>
+        <option id="blockQrcode" value="qrcode.png">QRcode</option>
+      </select>
+
+      <!-- ブロックカラー選択 -->
+      <input id="colorPicker" type="color" class="colorPicker displayArMode" value="#FF0000">
+    </div>
+
+    <!-- カスタムARボタン -->
+    <div id="gameStartButton" class="gameStartButton displayNormalMode">
+      <a href="#" id="ArGameStartIcon" class="gameStartButtonIcon">ARスタート</a>
+      <a href="#" id="myEnterVRButton" style="display:none">VRスタート</a>
+    </div>
+  </body>
+</html>
