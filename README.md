@@ -1,0 +1,2 @@
+# craftblocks_webxr
+以前8thwallwebで作ったVoxelEditorをWebXRに対応させました。
